@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Hide scrollbar while preserving functionality */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.message-bubble {
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+/* Animated card flipping for memory game */
+.memory-card-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.memory-card-front,
+.memory-card-back {
+  backface-visibility: hidden;
+}
+
+.memory-card-back {
+  transform: rotateY(180deg);
+}
